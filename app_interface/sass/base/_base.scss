@@ -12,16 +12,5 @@ html {
 
 body {
 	box-sizing: border-box;
-	background-color: $color-grey-dark;
-}
-
-.div {
-	width: 300px;
-	height: 200px;
-	background-color: red;
-	position: absolute;
-	top: 0;
-	right: 0;
-	left: 0;
-	transform: translateX(100%);
+	background-color: $color-grey-light-2;
 }

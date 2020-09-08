@@ -10,24 +10,38 @@ html {
 
 body {
   box-sizing: border-box;
-  background-color: #1d1d1d; }
-
-.div {
-  width: 300px;
-  height: 200px;
-  background-color: red;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  transform: translateX(100%); }
+  background-color: #181818; }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
   color: #777; }
+
+.btn:link, .btn:visited {
+  text-decoration: none;
+  text-align: center;
+  border-radius: 200px;
+  text-transform: uppercase;
+  font-weight: 600; }
+
+.btn-primary:link, .btn-primary:visited {
+  color: #fff;
+  border: 2px solid #fff;
+  transition: all .3s; }
+
+.btn-primary:hover {
+  background-color: #fff;
+  color: #000; }
+
+.large:link, .large:visited {
+  padding: 1.4rem 4rem;
+  font-size: 1.4rem; }
+
+.small:link, .small:visited {
+  padding: .8rem 2.5rem;
+  font-size: 1.2rem; }
 
 .nav {
   background-color: #000;
@@ -72,13 +86,60 @@ body {
       margin-right: 10px;
       color: #1db954; }
 
-.profile__container {
-  position: absolute;
-  left: 25rem; }
+.profile {
+  padding: 10rem 10rem; }
+  .profile__container {
+    text-align: center;
+    width: 100%; }
+  .profile__image {
+    display: inline-block;
+    border-radius: 50%;
+    width: 18rem; }
+  .profile__name {
+    color: white;
+    font-size: 4rem; }
+  .profile__info {
+    width: 70%;
+    margin: 1rem auto; }
+    .profile__info-container {
+      display: inline-block;
+      margin: 0 2rem; }
+    .profile__info-number {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #1db954; }
+    .profile__info-title {
+      font-size: 1.2rem;
+      text-transform: uppercase; }
+    .profile__info-logout {
+      margin-top: 5rem; }
 
-.profile__image {
+.top-stats {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: white;
   margin: 0 auto;
-  width: 20rem; }
-
-.profile__name {
-  font-size: 4rem; }
+  grid-column-gap: 10rem; }
+  .top-stats__heading {
+    width: 100%;
+    margin-bottom: 4rem; }
+    .top-stats__heading h1 {
+      font-size: 2rem;
+      display: inline-block; }
+    .top-stats__heading a {
+      float: right; }
+  .top-stats__li {
+    margin-bottom: 2rem; }
+  .top-stats__image {
+    width: 5rem;
+    border-radius: 200px;
+    display: inline-block;
+    margin-left: 1rem; }
+  .top-stats__name {
+    line-height: 5rem;
+    vertical-align: top;
+    display: inline-block;
+    font-size: 1.8rem;
+    margin-left: 3rem;
+    letter-spacing: .1rem; }

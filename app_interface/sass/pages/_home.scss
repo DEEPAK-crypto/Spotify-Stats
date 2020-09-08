@@ -1,13 +1,75 @@
 .profile {
+	padding: 10rem 10rem;
 	&__container {
-		position: absolute;
-		left: 25rem;
+		text-align: center;
+		width: 100%;
 	}
 	&__image {
-		margin: 0 auto;
-		width: 20rem;
+		display: inline-block;
+		border-radius: 50%;
+		width: 18rem;
 	}
 	&__name {
+		color: white;
 		font-size: 4rem;
+	}
+	&__info {
+		width: 70%;
+		margin: 1rem auto;
+		&-container {
+			display: inline-block;
+			margin: 0 2rem;
+		}
+		&-number {
+			font-size: 2.5rem;
+			font-weight: 600;
+			color: $color-primary;
+		}
+		&-title {
+			font-size: 1.2rem;
+			text-transform: uppercase;
+		}
+
+		&-logout {
+			margin-top: 5rem;
+		}
+	}
+}
+
+.top-stats {
+	width: 80%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	color: white;
+	margin: 0 auto;
+	grid-column-gap: 10rem;
+	&__heading {
+		width: 100%;
+		margin-bottom: 4rem;
+
+		h1 {
+			font-size: 2rem;
+			display: inline-block;
+		}
+		a {
+			float: right;
+		}
+	}
+	&__li {
+		margin-bottom: 2rem;
+	}
+	&__image {
+		width: 5rem;
+		border-radius: 200px;
+		display: inline-block;
+		margin-left: 1rem;
+	}
+	&__name {
+		line-height: 5rem;
+		vertical-align: top;
+		display: inline-block;
+		font-size: 1.8rem;
+		margin-left: 3rem;
+		letter-spacing: .1rem;
 	}
 }
