@@ -17,9 +17,6 @@ app.get('/', function(req, res) {
 	res.render('index');
 });
 
-var authInfo = {};
-var currentUser = {};
-
 app.get('/login', function(req, res) {
 	var scopes = 'user-read-private user-read-email';
 	res.redirect(
@@ -49,28 +46,38 @@ app.get('/logedIn', function(req, res) {
 	};
 	request.post(authOptions, function(error, response, body) {
 		if (!error && response.statusCode === 200) {
-			(authInfo.access_token = body.access_token), (authInforefresh_token = body.refresh_token);
+			var access_token = body.access_token,
+				refresh_token = body.refresh_token;
 
-			// use the access token to access the Spotify Web API
 			var options = {
 				url: 'https://api.spotify.com/v1/me',
-				headers: { Authorization: 'Bearer ' + authInfo.access_token },
+				headers: { Authorization: 'Bearer ' + access_token },
 				json: true
 			};
-			request.get(options, function(error, response, body) {
-				currentUser.user = body;
-			});
-			options.url = 'https://api.spotify.com/v1/me/playlists';
+			// use the access token to access the Spotify Web API
 
-			request.get(options, function(error, response, body) {
-				currentUser.playlist = body;
-				res.redirect('/profile');
-			});
+			res.redirect(
+				'/profile/?' +
+					querystring.stringify({
+						access_token: access_token,
+						refresh_token: refresh_token
+					})
+			);
 		}
 	});
 });
 
-app.get('/profile', function(req, res) {
-	res.render('profile', { user: currentUser.user, playlist: currentUser.playlist });
+app.get('/profile/', function(req, res) {
+	var access_token = req.query.access_token,
+		refresh_token = req.query.refresh_token;
+
+	var options = {
+		url: 'https://api.spotify.com/v1/me',
+		headers: { Authorization: 'Bearer ' + access_token },
+		json: true
+	};
+	request.get(options, function(error, response, body) {
+		res.render('profile', { data: body });
+	});
 });
 app.listen(3000);
