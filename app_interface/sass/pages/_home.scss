@@ -1,0 +1,13 @@
+.profile {
+	&__container {
+		position: absolute;
+		left: 25rem;
+	}
+	&__image {
+		margin: 0 auto;
+		width: 20rem;
+	}
+	&__name {
+		font-size: 4rem;
+	}
+}

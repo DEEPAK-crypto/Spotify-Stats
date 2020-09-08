@@ -7,10 +7,13 @@
     <title>Profile</title>
 </head>
 
+
 <body>
-    <h1><%= data.display_name %> </h1>
-    <h3>Followers : <%= data.followers.total %> </h3>
-    <img src="<%= data.images[0].url %>  " alt="">
+    <%= user.display_name %>
+    <% playlist.items.forEach(function(item) { %>
+    <h1><%= item.name %> </h1>
+    <img src=" <%= item.images[0].url %>  " alt="">
+    <% }) %>
 </body>
 
 </html>
