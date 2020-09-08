@@ -77,7 +77,7 @@ app.get('/logedIn', function(req, res) {
 				json: true
 			});
 			const artist = axios({
-				url: 'https://api.spotify.com/v1/me/top/artists?&limit=50',
+				url: 'https://api.spotify.com/v1/me/top/artists?&limit=10',
 				headers: { Authorization: 'Bearer ' + authInfo.access_token },
 				json: true
 			});
@@ -87,7 +87,7 @@ app.get('/logedIn', function(req, res) {
 					.all([ user, track, artist ])
 					.then(function(response) {
 						currentUser.user = response[0].data;
-						currentUser.tracks = response[1].data;
+						currentUser.track = response[1].data;
 						currentUser.artist = response[2].data;
 						res.redirect('/profile');
 					})
@@ -140,6 +140,6 @@ app.get('/logedIn', function(req, res) {
 
 app.get('/profile', function(req, res) {
 	console.log(currentUser);
-	res.render('profile', { user: currentUser.user, playlist: currentUser.playlist });
+	res.render('profile', { user: currentUser.user, artist: currentUser.artist, track: currentUser.track });
 });
 app.listen(3000);

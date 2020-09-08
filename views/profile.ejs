@@ -4,16 +4,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Spotify profile</title>
+    <link rel="shortcut icon" href="/css/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/067bd4d624.js" crossorigin="anonymous"></script>
 </head>
 
-
 <body>
-    <%= user.display_name %>
-    <% playlist.items.forEach(function(item) { %>
-    <h1><%= item.name %> </h1>
-    <img src=" <%= item.images[0].url %>  " alt="">
-    <% }) %>
+    <!-- <section id="nav">
+        <div class="nav">
+            <div class="nav__container">
+                <div class="nav__header">
+                    <div class="nav__header__container">
+                        <i class="fab fa-spotify nav__header--icon"></i> <span class="nav__header--title">Spotify</span>
+                    </div>
+
+                </div>
+                <input type="text" class="nav--searchbar" placeholder="search">
+                <div class="nav__list">
+                    <div class="nav__list__container"><a href=""><i class="fas fa-user"></i> Top Artist</a></div>
+                    <div class="nav__list__container"><a href=""><i class="fas fa-music"></i> Top Tracks</a></div>
+
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <main>
+        <section class="profile">
+            <div class="profile__container">
+                <img src="https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=1969249626696843&height=300&width=300&ext=1602175234&hash=AeRloensGK3soPXZ"
+                    alt="" class="profile__image">
+                <h1 class="profile__name"><%= user.display_name %> </h1>
+
+                <div class="profile__info">
+                    <div class="profile__info-container">
+                        <div class="profile__info-number"><%= user.followers.total %> </div>
+                        <div class="profile__info-title">Followers</div>
+                    </div>
+                    <div class="profile__info-container">
+                        <div class="profile__info-number">14</div>
+                        <div class="profile__info-title">Following</div>
+                    </div>
+                    <div class="profile__info-container">
+                        <div class="profile__info-number">48</div>
+                        <div class="profile__info-title">Playlists</div>
+                    </div>
+                    <div class="profile__info-logout">
+                        <a href="" class="btn btn-primary large">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="top-stats">
+            <div class="top-stats__container">
+                <div class="top-stats__heading">
+                    <h1>Top Artists of All Time
+                    </h1> <a href="" class="btn btn-primary small">See more</a>
+                </div>
+                <% artist.items.forEach(function(artist) { %>
+                <div class="top-stats__li">
+                    <img src="<%= artist.images[0].url %> " alt="" class="top-stats__image">
+                    <span class="top-stats__name"><%= artist.name %> </span>
+                </div>
+                <% }) %>
+
+
+
+
+            </div>
+            <div class="top-stats__container">
+                <div class="top-stats__heading">
+                    <h1>Top Tracks of All Time
+                    </h1> <a href="" class="btn btn-primary small">See more</a>
+                </div>
+                <% track.items.forEach(function(track) { %>
+                <div class="top-stats__li">
+                    <img src="<%= track.album.images[0].url %> " alt="" class="top-stats__image-track">
+                    <span class="top-stats__name"><%= track.name %> </span>
+                </div>
+                <% }) %>
+
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>
