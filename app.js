@@ -187,18 +187,21 @@ app.get('/logedIn', function(req, res) {
 });
 
 app.get('/profile', function(req, res) {
-	console.log(currentUser.following);
-	res.render('profile', {
-		user: currentUser.user,
-		artistLong: currentUser.artistLong,
-		artistMedium: currentUser.artistMedium,
-		artistShort: currentUser.artistShort,
-		trackLong: currentUser.trackLong,
-		trackMedium: currentUser.trackMedium,
-		trackShort: currentUser.trackShort,
-		recents: currentUser.recentlyPlayed,
-		playlists: currentUser.playlist,
-		following: currentUser.following
-	});
+	if (currentUser.user == null) {
+		res.redirect('/');
+	} else {
+		res.render('profile', {
+			user: currentUser.user,
+			artistLong: currentUser.artistLong,
+			artistMedium: currentUser.artistMedium,
+			artistShort: currentUser.artistShort,
+			trackLong: currentUser.trackLong,
+			trackMedium: currentUser.trackMedium,
+			trackShort: currentUser.trackShort,
+			recents: currentUser.recentlyPlayed,
+			playlists: currentUser.playlist,
+			following: currentUser.following
+		});
+	}
 });
 app.listen(3000);

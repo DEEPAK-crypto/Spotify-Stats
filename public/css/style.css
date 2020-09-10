@@ -309,6 +309,11 @@ body {
       border-bottom: 2px solid #fff;
       color: #fff; }
 
+@media (max-width: 48em) {
+  .main-track {
+    margin-top: 4rem;
+    padding-bottom: 10rem; } }
+
 .artist {
   text-align: center;
   color: #fff; }
