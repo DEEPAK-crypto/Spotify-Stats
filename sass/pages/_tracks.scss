@@ -1,0 +1,36 @@
+.tracks-full {
+	max-width: 124rem;
+	margin: 0 auto;
+	padding-top: 10rem;
+	width: 80%;
+}
+.top-nav {
+	color: $color-white;
+	margin-bottom: 4rem;
+	&__heading {
+		font-size: 2.3rem;
+		display: inline-block;
+	}
+	&__link {
+		float: right;
+		height: 100%;
+		padding: 1rem 0;
+		font-size: 1.6rem;
+		border-bottom: 2px solid transparent;
+		color: rgb(71, 71, 71);
+		transition: all .3s;
+		cursor: pointer;
+
+		&:not(:last-child) {
+			margin-left: 2rem;
+		}
+		&:hover {
+			color: $color-white;
+		}
+		&.active {
+			border-bottom: 2px solid $color-white;
+			color: $color-white;
+		}
+	}
+}
+

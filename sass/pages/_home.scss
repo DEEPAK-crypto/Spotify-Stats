@@ -38,6 +38,7 @@
 
 .top-stats {
 	width: 80%;
+	max-width: 1240px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	color: white;
@@ -48,34 +49,53 @@
 		margin-bottom: 4rem;
 
 		h1 {
-			font-size: 2rem;
+			font-size: 1.8rem;
 			display: inline-block;
 		}
 		a {
 			float: right;
 		}
 	}
-	&__li {
-		margin-bottom: 2rem;
-	}
-	&__image {
+}
+.track__li {
+	margin-bottom: 2rem;
+	color: $color-white;
+}
+.track__image {
+	width: 5rem;
+	border-radius: 200px;
+	display: inline-block;
+	margin-left: 1rem;
+
+	&-track {
 		width: 5rem;
-		border-radius: 200px;
 		display: inline-block;
 		margin-left: 1rem;
-
-		&-track {
-			width: 5rem;
-			display: inline-block;
-			margin-left: 1rem;
-		}
 	}
-	&__name {
-		line-height: 5rem;
-		vertical-align: top;
+}
+.artist__name {
+	line-height: 5rem;
+	vertical-align: top;
+	display: inline-block;
+	font-size: 1.6rem;
+	margin-left: 3rem;
+	letter-spacing: .1rem;
+}
+
+.track__name {
+	&-container {
 		display: inline-block;
-		font-size: 1.8rem;
+		box-sizing: border-box;
+		transform: translateY(-.6rem);
 		margin-left: 3rem;
+	}
+	&-track {
+		display: block;
+		font-size: 1.6rem;
 		letter-spacing: .1rem;
+	}
+	&-artists {
+		color: $color-grey-light-1;
+		display: block;
 	}
 }

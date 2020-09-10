@@ -1,0 +1,20 @@
+.artist {
+	text-align: center;
+	color: $color-white;
+	&__container {
+		display: grid;
+		grid-template-columns: auto auto auto auto;
+		grid-row-gap: 3rem;
+		grid-column-gap: 2rem;
+		overflow-x: hidden;
+	}
+
+	&__img {
+		width: 20rem;
+		height: 20rem;
+		border-radius: 50%;
+	}
+	&__name {
+		display: block;
+	}
+}

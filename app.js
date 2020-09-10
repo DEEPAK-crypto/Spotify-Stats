@@ -52,12 +52,6 @@ app.get('/logedIn', function(req, res) {
 		if (!error && response.statusCode === 200) {
 			(authInfo.access_token = body.access_token), (authInforefresh_token = body.refresh_token);
 
-			// use the access token to access the Spotify Web API
-			// var options = {
-			// 	url: 'https://api.spotify.com/v1/me',
-			// 	headers: { Authorization: 'Bearer ' + authInfo.access_token },
-			// 	json: true
-			// };
 			const headers = {
 				headers: { Authorization: 'Bearer ' + authInfo.access_token },
 				json: true
@@ -71,24 +65,78 @@ app.get('/logedIn', function(req, res) {
 				headers: { Authorization: 'Bearer ' + authInfo.access_token },
 				json: true
 			});
-			const track = axios({
-				url: 'https://api.spotify.com/v1/me/top/tracks?&limit=10',
+			const following = axios({
+				url: 'https://api.spotify.com/v1/me/following?type=artist',
 				headers: { Authorization: 'Bearer ' + authInfo.access_token },
 				json: true
 			});
-			const artist = axios({
-				url: 'https://api.spotify.com/v1/me/top/artists?&limit=10',
+			const recentlyPlayed = axios({
+				url: 'https://api.spotify.com/v1/me/player/recently-played',
+				headers: { Authorization: 'Bearer ' + authInfo.access_token },
+				json: true
+			});
+			const playlist = axios({
+				url: 'https://api.spotify.com/v1/me/playlists',
+				headers: { Authorization: 'Bearer ' + authInfo.access_token },
+				json: true
+			});
+
+			const trackLong = axios({
+				url: 'https://api.spotify.com/v1/me/top/tracks?limit=50&time_range=long_term',
+				headers: { Authorization: 'Bearer ' + authInfo.access_token },
+				json: true
+			});
+			const trackmedium = axios({
+				url: 'https://api.spotify.com/v1/me/top/tracks?limit=50&time_range=medium_term',
+				headers: { Authorization: 'Bearer ' + authInfo.access_token },
+				json: true
+			});
+			const trackShort = axios({
+				url: 'https://api.spotify.com/v1/me/top/tracks?limit=50&time_range=short_term',
+				headers: { Authorization: 'Bearer ' + authInfo.access_token },
+				json: true
+			});
+			const artistLong = axios({
+				url: 'https://api.spotify.com/v1/me/top/artists?limit=50&time_range=long_term',
+				headers: { Authorization: 'Bearer ' + authInfo.access_token },
+				json: true
+			});
+			const artistMedium = axios({
+				url: 'https://api.spotify.com/v1/me/top/artists?limit=50&time_range=medium_term',
+				headers: { Authorization: 'Bearer ' + authInfo.access_token },
+				json: true
+			});
+			const artistShort = axios({
+				url: 'https://api.spotify.com/v1/me/top/artists?limit=50&time_range=short_term',
 				headers: { Authorization: 'Bearer ' + authInfo.access_token },
 				json: true
 			});
 
 			async function data() {
 				await axios
-					.all([ user, track, artist ])
+					.all([
+						user,
+						following,
+						recentlyPlayed,
+						playlist,
+						trackLong,
+						trackmedium,
+						trackShort,
+						artistLong,
+						artistMedium,
+						artistShort
+					])
 					.then(function(response) {
 						currentUser.user = response[0].data;
-						currentUser.track = response[1].data;
-						currentUser.artist = response[2].data;
+						currentUser.following = response[1].data;
+						currentUser.recentlyPlayed = response[2].data;
+						currentUser.playlist = response[3].data;
+						currentUser.trackLong = response[4].data;
+						currentUser.trackmedium = response[5].data;
+						currentUser.trackShort = response[6].data;
+						currentUser.artistLong = response[7].data;
+						currentUser.artistMedium = response[8].data;
+						currentUser.artistShort = response[9].data;
 						res.redirect('/profile');
 					})
 					.catch(function(error) {
@@ -140,6 +188,10 @@ app.get('/logedIn', function(req, res) {
 
 app.get('/profile', function(req, res) {
 	console.log(currentUser);
-	res.render('profile', { user: currentUser.user, artist: currentUser.artist, track: currentUser.track });
+	res.render('profile', {
+		user: currentUser.user,
+		artistLong: currentUser.artistLong,
+		trackLong: currentUser.trackLong
+	});
 });
 app.listen(3000);
