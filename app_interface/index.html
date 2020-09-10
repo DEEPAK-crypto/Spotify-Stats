@@ -35,23 +35,23 @@
         <nav class="sidebar">
             <img src="https://cdn.iconscout.com/icon/free/png-256/spotify-11-432546.png" alt="" class="sidebar__logo">
             <div class="sidebar__link">
-                <div class="sidebar__link-container">
+                <div class="sidebar__link-container active" id="profile">
                     <i class="fas fa-user sidebar__link-icon"></i>
                     <span class="sidebar__link-text">Profile</span>
                 </div>
-                <div class="sidebar__link-container active">
+                <div class="sidebar__link-container" id='top-tracks'>
                     <i class="fas fa-music sidebar__link-icon"></i>
                     <span class="sidebar__link-text">Top Tracks</span>
                 </div>
-                <div class="sidebar__link-container">
+                <div class="sidebar__link-container" id='top-artist'>
                     <i class="fas fa-guitar sidebar__link-icon"></i>
                     <span class="sidebar__link-text">Top Artist</span>
                 </div>
-                <div class="sidebar__link-container">
+                <div class="sidebar__link-container" id="recent">
                     <i class="fas fa-history sidebar__link-icon"></i>
                     <span class="sidebar__link-text">Recent</span>
                 </div>
-                <div class="sidebar__link-container">
+                <div class="sidebar__link-container" id='playlist'>
                     <i class="fas fa-list-alt sidebar__link-icon"></i>
                     <span class="sidebar__link-text">Playlist</span>
                 </div>
@@ -60,8 +60,8 @@
 
         </nav>
 
-        <!-- 
-        <main class="content">
+
+        <main class="content" id="profileSec">
             <section class="profile">
                 <div class="profile__container">
                     <img src="https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=1969249626696843&height=300&width=300&ext=1602175234&hash=AeRloensGK3soPXZ"
@@ -174,11 +174,11 @@
 
                 </div>
             </section>
-        </main> -->
+        </main>
 
 
 
-        <main class="tracks-full content">
+        <main class="tracks-full content" id='top-tracksSec' style="display: none;">
             <div class="top-nav">
                 <h2 class="top-nav__heading"> Top Tracks</h2>
                 <div class="top-nav__link ">Last 4 months </div>
