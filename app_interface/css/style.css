@@ -213,3 +213,15 @@ body {
     .top-nav__link.active {
       border-bottom: 2px solid #fff;
       color: #fff; }
+
+.artist {
+  text-align: center;
+  color: #fff; }
+  .artist__container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-column-gap: 2rem;
+    overflow-x: hidden; }
+  .artist__img {
+    width: 20rem;
+    border-radius: 50%; }
