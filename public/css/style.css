@@ -413,7 +413,7 @@ body {
 @media (max-width: 48em) {
 	.main-track {
 		margin-top: 4rem;
-		padding-bottom: 10rem;
+		margin-bottom: 10rem;
 	}
 }
 
