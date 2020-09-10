@@ -4,12 +4,37 @@
 	&__container {
 		display: grid;
 		grid-template-columns: auto auto auto auto;
+		grid-row-gap: 3rem;
 		grid-column-gap: 2rem;
 		overflow-x: hidden;
+
+		@include respond(tab-land) {
+			grid-template-columns: auto auto auto;
+		}
+		@include respond(phone) {
+			grid-template-columns: auto auto;
+		}
 	}
 
 	&__img {
 		width: 20rem;
+		height: 20rem;
 		border-radius: 50%;
+		&.playlist {
+			border-radius: 2px;
+		}
 	}
+
+	&__name {
+		line-height: 5rem;
+		vertical-align: top;
+		display: block;
+		font-size: 1.6rem;
+		letter-spacing: .1rem;
+	}
+}
+.trackTotal {
+	display: block;
+	color: $color-grey-light-1;
+	transform: translateY(-.8rem);
 }

@@ -44,6 +44,12 @@
 	color: white;
 	margin: 0 auto;
 	grid-column-gap: 10rem;
+	@include respond(tab-port) {
+		grid-column-gap: 5rem;
+	}
+	@include respond(phone) {
+		grid-template-columns: 1fr;
+	}
 	&__heading {
 		width: 100%;
 		margin-bottom: 4rem;
@@ -52,7 +58,7 @@
 			font-size: 1.8rem;
 			display: inline-block;
 		}
-		a {
+		button {
 			float: right;
 		}
 	}
@@ -72,14 +78,6 @@
 		display: inline-block;
 		margin-left: 1rem;
 	}
-}
-.artist__name {
-	line-height: 5rem;
-	vertical-align: top;
-	display: inline-block;
-	font-size: 1.6rem;
-	margin-left: 3rem;
-	letter-spacing: .1rem;
 }
 
 .track__name {

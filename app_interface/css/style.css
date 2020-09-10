@@ -1,3 +1,21 @@
+/*
+0px-600px : Phone small
+600-768px :  Phone
+768px - 1000px: Tablet portrait
+1000-1200px: Tablet landscape
+1200-1800px: Normal desktop
+1800px + : Big Desktop
+*/
+/*
+$breakpoint argument choices:-
+-phone-small
+-phone
+-tab-port
+-tab-land
+-big-desktop
+Order :  BAse + typography > general layout + grid > page layout > components
+1em = 16px
+*/
 *,
 *::after,
 *::before {
@@ -7,6 +25,15 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 62.5em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box;
@@ -19,14 +46,19 @@ body {
   line-height: 1.7;
   color: #777; }
 
-.btn:link, .btn:visited {
-  text-decoration: none;
-  text-align: center;
-  border-radius: 200px;
-  text-transform: uppercase;
-  font-weight: 600; }
+.btn {
+  border: none;
+  cursor: pointer;
+  background: none; }
+  .btn, .btn:link, .btn:visited {
+    text-decoration: none;
+    text-align: center;
+    border-radius: 200px;
+    text-transform: uppercase;
+    font-weight: 600;
+    outline: none; }
 
-.btn-primary:link, .btn-primary:visited {
+.btn-primary, .btn-primary:link, .btn-primary:visited {
   color: #fff;
   border: 2px solid #fff;
   transition: all .3s; }
@@ -35,11 +67,11 @@ body {
   background-color: #fff;
   color: #000; }
 
-.large:link, .large:visited {
+.large, .large:link, .large:visited {
   padding: 1.4rem 4rem;
   font-size: 1.4rem; }
 
-.small:link, .small:visited {
+.small, .small:link, .small:visited {
   padding: .8rem 2.5rem;
   font-size: 1.2rem; }
 
@@ -139,13 +171,22 @@ body {
   color: white;
   margin: 0 auto;
   grid-column-gap: 10rem; }
+  @media (max-width: 62.5em) {
+    .top-stats {
+      grid-column-gap: 5rem; } }
+  @media (max-width: 37.5em) {
+    .top-stats {
+      grid-template-columns: 1fr; } }
+  @media (max-width: 48em) {
+    .top-stats {
+      grid-template-columns: 1fr; } }
   .top-stats__heading {
     width: 100%;
     margin-bottom: 4rem; }
     .top-stats__heading h1 {
       font-size: 1.8rem;
       display: inline-block; }
-    .top-stats__heading a {
+    .top-stats__heading button {
       float: right; }
 
 .track__li {
@@ -161,14 +202,6 @@ body {
     width: 5rem;
     display: inline-block;
     margin-left: 1rem; }
-
-.artist__name {
-  line-height: 5rem;
-  vertical-align: top;
-  display: inline-block;
-  font-size: 1.6rem;
-  margin-left: 3rem;
-  letter-spacing: .1rem; }
 
 .track__name-container {
   display: inline-block;
@@ -220,8 +253,32 @@ body {
   .artist__container {
     display: grid;
     grid-template-columns: auto auto auto auto;
+    grid-row-gap: 3rem;
     grid-column-gap: 2rem;
     overflow-x: hidden; }
+    @media (max-width: 75em) {
+      .artist__container {
+        grid-template-columns: auto auto auto; } }
+    @media (max-width: 37.5em) {
+      .artist__container {
+        grid-template-columns: auto auto; } }
+    @media (max-width: 48em) {
+      .artist__container {
+        grid-template-columns: auto auto; } }
   .artist__img {
     width: 20rem;
+    height: 20rem;
     border-radius: 50%; }
+    .artist__img.playlist {
+      border-radius: 2px; }
+  .artist__name {
+    line-height: 5rem;
+    vertical-align: top;
+    display: block;
+    font-size: 1.6rem;
+    letter-spacing: .1rem; }
+
+.trackTotal {
+  display: block;
+  color: #c9c9c9;
+  transform: translateY(-0.8rem); }
