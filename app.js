@@ -11,7 +11,7 @@ app.use(express.static(__dirname + '/public'));
 
 var client_id = 'b3cd9c2e0f2d4591b584820ab5f5e11e';
 var client_secret = 'be918ee525ee453a8e4821689ee1c27f';
-var redirect_uri = 'https://spotify-statss.herokuapp.com/logedIn';
+var redirect_uri = process.env.redirect_uri || 'http://localhost:8888/logedIn';
 
 app.get('/', function(req, res) {
 	res.redirect('/login');
@@ -40,7 +40,7 @@ app.get('/logedIn', function(req, res) {
 		url: 'https://accounts.spotify.com/api/token',
 		form: {
 			code: req.query.code,
-			redirect_uri: 'https://spotify-statss.herokuapp.com/logedIn',
+			redirect_uri: redirect_uri,
 			grant_type: 'authorization_code'
 		},
 		headers: {
