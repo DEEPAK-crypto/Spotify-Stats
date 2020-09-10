@@ -19,23 +19,19 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		max-height: 40rem;
+
 		&-container {
 			display: block;
 			padding: 1rem 0;
-			border-left: 3px solid white;
-			&,
-			&:link,
-			&:visited {
-				text-decoration: none;
-				color: rgb(71, 71, 71);
-				border-left: 3px solid white;
-				border: none;
-				cursor: pointer;
-			}
+			border-left: 3px solid transparent;
 
+			text-decoration: none;
+			color: rgb(71, 71, 71);
+
+			cursor: pointer;
+			transition: all .4s;
 			&:hover,
-			&:active,
-			&:focus {
+			&.active {
 				background-color: rgba($color-grey-light-2, .9);
 				color: white;
 				border-left: 3px solid $color-primary;
@@ -44,9 +40,6 @@
 		// &-container:not(:last-child) {
 		// 	margin-bottom: 2rem;
 		// }
-		&-container .active {
-			color: white;
-		}
 
 		&-icon {
 			display: block;

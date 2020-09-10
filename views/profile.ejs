@@ -31,65 +31,96 @@
             </div>
         </div>
     </section> -->
-
-    <main>
-        <section class="profile">
-            <div class="profile__container">
-                <img src="<%= user.images[0].url %> " alt="" class="profile__image">
-                <h1 class="profile__name"><%= user.display_name %> </h1>
-
-                <div class="profile__info">
-                    <div class="profile__info-container">
-                        <div class="profile__info-number"><%= user.followers.total %> </div>
-                        <div class="profile__info-title">Followers</div>
-                    </div>
-                    <div class="profile__info-container">
-                        <div class="profile__info-number">14</div>
-                        <div class="profile__info-title">Following</div>
-                    </div>
-                    <div class="profile__info-container">
-                        <div class="profile__info-number">48</div>
-                        <div class="profile__info-title">Playlists</div>
-                    </div>
-                    <div class="profile__info-logout">
-                        <a href="" class="btn btn-primary large">Logout</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="top-stats">
-            <div class="top-stats__container">
-                <div class="top-stats__heading">
-                    <h1>Top Artists of All Time
-                    </h1> <a href="" class="btn btn-primary small">See more</a>
-                </div>
-                <% artist.items.forEach(function(artist) { %>
-                <div class="top-stats__li">
-                    <img src="<%= artist.images[0].url %> " alt="" class="top-stats__image">
-                    <span class="top-stats__name"><%= artist.name %> </span>
-                </div>
-                <% }) %>
-
-
-
+    <div class="container">
+        <nav class="sidebar">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/spotify-11-432546.png" alt="" class="sidebar__logo">
+            <div class="sidebar__link">
+                <a href="" class="sidebar__link-container">
+                    <i class="fas fa-user sidebar__link-icon"></i>
+                    <span class="sidebar__link-text">Profile</span>
+                </a>
+                <a href="" class="sidebar__link-container active">
+                    <i class="fas fa-music sidebar__link-icon"></i>
+                    <span class="sidebar__link-text">Top Tracks</span>
+                </a>
+                <a href="" class="sidebar__link-container">
+                    <i class="fas fa-guitar sidebar__link-icon"></i>
+                    <span class="sidebar__link-text">Top Artist</span>
+                </a>
+                <a href="" class="sidebar__link-container">
+                    <i class="fas fa-history sidebar__link-icon"></i>
+                    <span class="sidebar__link-text">Recent</span>
+                </a>
+                <a href="" class="sidebar__link-container">
+                    <i class="fas fa-list-alt sidebar__link-icon"></i>
+                    <span class="sidebar__link-text">Playlist</span>
+                </a>
 
             </div>
-            <div class="top-stats__container">
-                <div class="top-stats__heading">
-                    <h1>Top Tracks of All Time
-                    </h1> <a href="" class="btn btn-primary small">See more</a>
-                </div>
-                <% track.items.forEach(function(track) { %>
-                <div class="top-stats__li">
-                    <img src="<%= track.album.images[0].url %> " alt="" class="top-stats__image-track">
-                    <span class="top-stats__name"><%= track.name %> </span>
-                </div>
-                <% }) %>
 
-            </div>
-        </section>
-    </main>
+        </nav>
+
+
+        <main class="content">
+            <section class="profile">
+                <div class="profile__container">
+                    <img src="<%= user.images[0].url %> " alt="" class="profile__image">
+                    <h1 class="profile__name"><%= user.display_name %> </h1>
+
+                    <div class="profile__info">
+                        <div class="profile__info-container">
+                            <div class="profile__info-number"><%= user.followers.total %> </div>
+                            <div class="profile__info-title">Followers</div>
+                        </div>
+                        <div class="profile__info-container">
+                            <div class="profile__info-number">14</div>
+                            <div class="profile__info-title">Following</div>
+                        </div>
+                        <div class="profile__info-container">
+                            <div class="profile__info-number">48</div>
+                            <div class="profile__info-title">Playlists</div>
+                        </div>
+                        <div class="profile__info-logout">
+                            <a href="" class="btn btn-primary large">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="top-stats">
+                <div class="top-stats__container">
+                    <div class="top-stats__heading">
+                        <h1>Top Artists of All Time
+                        </h1> <a href="" class="btn btn-primary small">See more</a>
+                    </div>
+                    <% artist.items.forEach(function(artist) { %>
+                    <div class="top-stats__li">
+                        <img src="<%= artist.images[0].url %> " alt="" class="top-stats__image">
+                        <span class="top-stats__name"><%= artist.name %> </span>
+                    </div>
+                    <% }) %>
+
+
+
+
+                </div>
+                <div class="top-stats__container">
+                    <div class="top-stats__heading">
+                        <h1>Top Tracks of All Time
+                        </h1> <a href="" class="btn btn-primary small">See more</a>
+                    </div>
+                    <% track.items.forEach(function(track) { %>
+                    <div class="top-stats__li">
+                        <img src="<%= track.album.images[0].url %> " alt="" class="top-stats__image-track">
+                        <span class="top-stats__name"><%= track.name %> </span>
+                    </div>
+                    <% }) %>
+
+                </div>
+            </section>
+        </main>
+
+    </div>
 </body>
 
 </html>

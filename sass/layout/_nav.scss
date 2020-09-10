@@ -1,56 +1,66 @@
-.nav {
-	background-color: $color-black;
-	width: 250px;
-	height: 100vh;
-	position: fixed;
-	font-size: 1.5rem;
-	padding-top: 3rem;
-	&__container {
-		margin: 20px;
-	}
+.container {
+	display: flex;
+}
+.sidebar {
+	position: relative;
+	background-color: $color-grey-dark;
+	flex: 0 0 10rem;
+	text-align: center;
+	padding-top: 5rem;
 
-	&__header {
-		&__container {
-			text-align: center;
-			color: $color-white;
+	&__logo {
+		width: 5rem;
+	}
+	&__link {
+		width: 100%;
+		height: 40vh;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		max-height: 40rem;
+		&-container {
+			display: block;
+			padding: 1rem 0;
+			border-left: 3px solid white;
+			&,
+			&:link,
+			&:visited {
+				text-decoration: none;
+				color: rgb(71, 71, 71);
+				border-left: 3px solid white;
+				border: none;
+				cursor: pointer;
+			}
+
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: rgba($color-grey-light-2, .9);
+				color: white;
+				border-left: 3px solid $color-primary;
+			}
 		}
-		&--icon {
-			color: $color-primary;
-			font-size: 4rem;
+		// &-container:not(:last-child) {
+		// 	margin-bottom: 2rem;
+		// }
+		&-container .active {
+			color: white;
 		}
-		&--title {
-			vertical-align: top;
-			height: 4rem;
-			display: inline-block;
+
+		&-icon {
+			display: block;
 			font-size: 2.5rem;
 		}
-	}
-	&--searchbar {
-		height: 3rem;
-		width: 20rem;
-		margin-top: 3rem;
-		padding-left: 1rem;
-		border-radius: 3px;
-		outline: none;
-		border: none;
-	}
-	&__list {
-		margin: 3rem auto;
-		&__container {
-			margin-left: 1.5rem;
-			margin-bottom: 2rem;
-			width: 100%;
-			height: 40px;
-			font-size: 1.8rem;
-		}
-		a {
-			text-decoration: none;
-			color: $color-white;
-		}
-
-		i {
-			margin-right: 10px;
-			color: $color-primary;
+		&-text {
+			margin-top: 1rem;
+			font-size: 1.2rem;
+			display: block;
 		}
 	}
+}
+.content {
+	height: 100vh;
+	overflow-y: auto;
+	flex: 1;
 }
