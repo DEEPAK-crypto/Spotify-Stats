@@ -400,9 +400,14 @@ body {
 }
 @media (max-width: 48em) {
 	.top-nav__link-container {
+		width: 90vw;
 		margin-bottom: 4rem;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
+		text-align: center;
+	}
+	#longTermDivA {
+		width: 90vw;
 	}
 }
 .top-nav__link:not(:last-child) {
