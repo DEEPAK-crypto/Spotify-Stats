@@ -40,7 +40,7 @@ app.get('/logedIn', function(req, res) {
 		url: 'https://accounts.spotify.com/api/token',
 		form: {
 			code: req.query.code,
-			redirect_uri: 'http://localhost:3000/logedIn',
+			redirect_uri: 'https://spotify-statss.herokuapp.com/logedIn',
 			grant_type: 'authorization_code'
 		},
 		headers: {
