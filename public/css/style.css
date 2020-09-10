@@ -180,7 +180,11 @@ body {
 @media (max-width: 48em) {
 	.sidebar__link {
 		height: 6rem;
+		max-height: 6rem;
 		display: grid;
+		position: relative;
+		top: 0;
+		left: 0;
 		grid-template-columns: auto auto auto auto auto;
 	}
 }
