@@ -6,6 +6,7 @@
 }
 .top-nav {
 	color: $color-white;
+	margin-bottom: 4rem;
 	&__heading {
 		font-size: 2.3rem;
 		display: inline-block;
@@ -32,6 +33,4 @@
 		}
 	}
 }
-.track__container {
-	margin-top: 4rem;
-}
+
