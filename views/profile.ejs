@@ -73,16 +73,16 @@
                             <div class="profile__info-title">Followers</div>
                         </div>
                         <div class="profile__info-container">
-                            <div class="profile__info-number">14</div>
+                            <div class="profile__info-number"><%= following.artists.total %> </div>
                             <div class="profile__info-title">Following</div>
                         </div>
                         <div class="profile__info-container">
-                            <div class="profile__info-number">48</div>
-                            <div class="profile__info-title">Playlists</div>
+                            <div class="profile__info-number"><%= playlists.items.length %></div>
+                            <div class="profile__info-title">Playlists </div>
                         </div>
-                        <div class="profile__info-logout">
+                        <!-- <div class="profile__info-logout">
                             <a href="" class="btn btn-primary large">Logout</a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </section>
@@ -91,7 +91,7 @@
                 <div class="top-stats__container">
                     <div class="top-stats__heading">
                         <h1>Top Artists of All Time
-                        </h1> <a href="" class="btn btn-primary small">See more</a>
+                        </h1> <button class="btn btn-primary small see_more" id="top-artistsS">See more</button>
                     </div>
                     <% var count = 0 %>
                     <% artistLong.items.forEach(function(artist) { %>
@@ -111,7 +111,7 @@
                 <div class="track__container">
                     <div class="top-stats__heading">
                         <h1>Top Tracks of All Time
-                        </h1> <a href="" class="btn btn-primary small">See more</a>
+                        </h1> <button href="" class="btn btn-primary small see_more" id="top-tracksS">See more</button>
                     </div>
                     <% var count = 0 %>
                     <% trackLong.items.forEach(function(track) { %>
@@ -135,16 +135,12 @@
             <div class="tracks-full content__div">
                 <div class="top-nav">
                     <h2 class="top-nav__heading"> Top Tracks</h2>
-                    <div class="top-nav__link ">Last 4 months </div>
-                    <div class="top-nav__link">Last 6 months </div>
-                    <div class="top-nav__link active">All Time </div>
+                    <div class="top-nav__link t " id="shortTerm">Last 4 months </div>
+                    <div class="top-nav__link t" id="mediumTerm">Last 6 months </div>
+                    <div class="top-nav__link t active" id="longTerm">All Time </div>
                 </div>
-                <div class="track__container">
-
+                <div class="track__container t" id="longTermDivT">
                     <% trackLong.items.forEach(function(track) { %>
-
-
-
                     <div class="track__li">
                         <img src="<%= track.album.images[2].url %>" alt="" class="track__image-track">
                         <div class="track__name-container">
@@ -153,10 +149,31 @@
                                 <%= track.album.name %> </span>
                         </div>
                     </div>
-
-
                     <% }) %>
-
+                </div>
+                <div class="track__container t" id="mediumTermDivT">
+                    <% trackMedium.items.forEach(function(track) { %>
+                    <div class="track__li">
+                        <img src="<%= track.album.images[2].url %>" alt="" class="track__image-track">
+                        <div class="track__name-container">
+                            <span class="track__name-track"><%= track.name %></span>
+                            <span class="track__name-artists"> <%= track.album.artists[0].name %> &nbsp; . &nbsp;
+                                <%= track.album.name %> </span>
+                        </div>
+                    </div>
+                    <% }) %>
+                </div>
+                <div class="track__container t" id="shortTermDivT">
+                    <% trackShort.items.forEach(function(track) { %>
+                    <div class="track__li">
+                        <img src="<%= track.album.images[2].url %>" alt="" class="track__image-track">
+                        <div class="track__name-container">
+                            <span class="track__name-track"><%= track.name %></span>
+                            <span class="track__name-artists"> <%= track.album.artists[0].name %> &nbsp; . &nbsp;
+                                <%= track.album.name %> </span>
+                        </div>
+                    </div>
+                    <% }) %>
                 </div>
 
 
@@ -166,12 +183,11 @@
             <div class="tracks-full content__div">
                 <div class="top-nav">
                     <h2 class="top-nav__heading"> Top Artists</h2>
-                    <div class="top-nav__link ">Last 4 months </div>
-                    <div class="top-nav__link">Last 6 months </div>
-                    <div class="top-nav__link active">All Time </div>
+                    <div class="top-nav__link a" id="shortTerm">Last 4 months </div>
+                    <div class="top-nav__link a" id="mediumTerm">Last 6 months </div>
+                    <div class="top-nav__link a active" id="longTerm">All Time </div>
                 </div>
-                <div class="artist__container">
-
+                <div class="artist__container a" id="longTermDivA">
                     <% artistLong.items.forEach(function(artist) { %>
                     <div class="artist">
                         <img src="<%= artist.images[0].url %> " alt="" class="artist__img">
@@ -179,39 +195,77 @@
                             <%= artist.name %>
                         </span>
                     </div>
-
                     <% }) %>
-
-
+                </div>
+                <div class="artist__container a" id="mediumTermDivA">
+                    <% artistMedium.items.forEach(function(artist) { %>
+                    <div class="artist">
+                        <img src="<%= artist.images[0].url %> " alt="" class="artist__img">
+                        <span class="artist__name">
+                            <%= artist.name %>
+                        </span>
+                    </div>
+                    <% }) %>
+                </div>
+                <div class="artist__container a" id="shortTermDivA">
+                    <% artistShort.items.forEach(function(artist) { %>
+                    <div class="artist">
+                        <img src="<%= artist.images[0].url %> " alt="" class="artist__img">
+                        <span class="artist__name">
+                            <%= artist.name %>
+                        </span>
+                    </div>
+                    <% }) %>
                 </div>
             </div>
 
         </main>
 
-        <main class="tracks-full content" id='recentSec' style="display: none;">
-            <div class="top-nav">
-                <h2 class="top-nav__heading"> Recently Played Tracks</h2>
+        <main class="content" id='recentSec' style="display: none;">
+            <div class="tracks-full content__div">
+                <div class="top-nav">
+                    <h2 class="top-nav__heading"> Recently Played Tracks</h2>
 
-            </div>
-            <div class="track__container">
-                <% recents.items.forEach(function(recent) { %>
-
-
-
-                <div class="track__li">
-                    <img src="<%= recent.track.album.images[2].url %>" alt="" class="track__image-track">
-                    <div class="track__name-container">
-                        <span class="track__name-track"><%= recent.track.name %></span>
-                        <span class="track__name-artists"> <%= recent.track.album.artists[0].name %> &nbsp; . &nbsp;
-                            <%= recent.track.album.name %> </span>
-                    </div>
                 </div>
+                <div class="track__container">
+                    <% recents.items.forEach(function(recent) { %>
+                    <div class="track__li">
+                        <img src="<%= recent.track.album.images[2].url %>" alt="" class="track__image-track">
+                        <div class="track__name-container">
+                            <span class="track__name-track"><%= recent.track.name %></span>
+                            <span class="track__name-artists"> <%= recent.track.album.artists[0].name %> &nbsp; . &nbsp;
+                                <%= recent.track.album.name %> </span>
+                        </div>
+                    </div>
+                    <% }) %>
 
 
-                <% }) %>
+
+                </div>
+            </div>
+        </main>
+
+        <main class=" content" id='playlistSec' style="display: none;">
+            <div class="tracks-full content__div">
+                <div class="top-nav">
+                    <h2 class="top-nav__heading"> Your Playlists</h2>
+
+                </div>
+                <div class="artist__container">
+
+                    <% playlists.items.forEach(function(playlist) { %>
+                    <div class="artist">
+                        <img src="<%= playlist.images[0].url %> " alt="" class="artist__img playlist">
+                        <span class="artist__name">
+                            <%=playlist.name %>
+                        </span>
+                        <span class="trackTotal"><%= playlist.tracks.total %> TRACKS</span>
+                    </div>
+
+                    <% }) %>
 
 
-
+                </div>
             </div>
 
         </main>

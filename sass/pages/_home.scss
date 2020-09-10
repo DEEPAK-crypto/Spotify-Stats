@@ -52,7 +52,7 @@
 			font-size: 1.8rem;
 			display: inline-block;
 		}
-		a {
+		button {
 			float: right;
 		}
 	}
@@ -73,14 +73,6 @@
 		margin-left: 1rem;
 	}
 }
-.artist__name {
-	line-height: 5rem;
-	vertical-align: top;
-	display: inline-block;
-	font-size: 1.6rem;
-	margin-left: 3rem;
-	letter-spacing: .1rem;
-}
 
 .track__name {
 	&-container {
@@ -88,11 +80,6 @@
 		box-sizing: border-box;
 		transform: translateY(-.6rem);
 		margin-left: 3rem;
-		max-width: 350px;
-		overflow-x: hidden;
-		&.artist {
-			transform: translateY(-1.6rem);
-		}
 	}
 	&-track {
 		display: block;

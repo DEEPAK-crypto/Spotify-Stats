@@ -66,12 +66,12 @@ app.get('/logedIn', function(req, res) {
 				json: true
 			});
 			const following = axios({
-				url: 'https://api.spotify.com/v1/me/following?type=artist',
+				url: 'https://api.spotify.com/v1/me/following?type=artist&limit=50',
 				headers: { Authorization: 'Bearer ' + authInfo.access_token },
 				json: true
 			});
 			const recentlyPlayed = axios({
-				url: 'https://api.spotify.com/v1/me/player/recently-played',
+				url: 'https://api.spotify.com/v1/me/player/recently-played?limit=50',
 				headers: { Authorization: 'Bearer ' + authInfo.access_token },
 				json: true
 			});
@@ -132,7 +132,7 @@ app.get('/logedIn', function(req, res) {
 						currentUser.recentlyPlayed = response[2].data;
 						currentUser.playlist = response[3].data;
 						currentUser.trackLong = response[4].data;
-						currentUser.trackmedium = response[5].data;
+						currentUser.trackMedium = response[5].data;
 						currentUser.trackShort = response[6].data;
 						currentUser.artistLong = response[7].data;
 						currentUser.artistMedium = response[8].data;
@@ -187,12 +187,18 @@ app.get('/logedIn', function(req, res) {
 });
 
 app.get('/profile', function(req, res) {
-	console.log(currentUser);
+	console.log(currentUser.following);
 	res.render('profile', {
 		user: currentUser.user,
 		artistLong: currentUser.artistLong,
+		artistMedium: currentUser.artistMedium,
+		artistShort: currentUser.artistShort,
 		trackLong: currentUser.trackLong,
-		recents: currentUser.recentlyPlayed
+		trackMedium: currentUser.trackMedium,
+		trackShort: currentUser.trackShort,
+		recents: currentUser.recentlyPlayed,
+		playlists: currentUser.playlist,
+		following: currentUser.following
 	});
 });
 app.listen(3000);
