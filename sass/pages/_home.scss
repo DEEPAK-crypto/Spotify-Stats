@@ -88,6 +88,11 @@
 		box-sizing: border-box;
 		transform: translateY(-.6rem);
 		margin-left: 3rem;
+		max-width: 350px;
+		overflow-x: hidden;
+		&.artist {
+			transform: translateY(-1.6rem);
+		}
 	}
 	&-track {
 		display: block;

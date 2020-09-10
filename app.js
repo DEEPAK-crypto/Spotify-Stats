@@ -191,7 +191,8 @@ app.get('/profile', function(req, res) {
 	res.render('profile', {
 		user: currentUser.user,
 		artistLong: currentUser.artistLong,
-		trackLong: currentUser.trackLong
+		trackLong: currentUser.trackLong,
+		recents: currentUser.recentlyPlayed
 	});
 });
 app.listen(3000);
