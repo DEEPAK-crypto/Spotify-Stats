@@ -400,7 +400,7 @@ body {
 }
 @media (max-width: 48em) {
 	.top-nav__link-container {
-		width: 80vw;
+		margin-bottom: 4rem;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 	}
