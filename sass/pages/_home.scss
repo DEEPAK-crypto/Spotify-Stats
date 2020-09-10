@@ -1,5 +1,11 @@
 .profile {
 	padding: 10rem 10rem;
+	@include respond(phone) {
+		padding: 5rem 5rem;
+	}
+	@include respond(phone-small) {
+		padding: 5rem 0;
+	}
 	&__container {
 		text-align: center;
 		width: 100%;
@@ -16,6 +22,9 @@
 	&__info {
 		width: 70%;
 		margin: 1rem auto;
+		@include respond(phone) {
+			width: 100%;
+		}
 		&-container {
 			display: inline-block;
 			margin: 0 2rem;
@@ -44,6 +53,12 @@
 	color: white;
 	margin: 0 auto;
 	grid-column-gap: 10rem;
+	@include respond(tab-port) {
+		grid-column-gap: 5rem;
+	}
+	@include respond(phone) {
+		grid-template-columns: 1fr;
+	}
 	&__heading {
 		width: 100%;
 		margin-bottom: 4rem;
@@ -80,6 +95,7 @@
 		box-sizing: border-box;
 		transform: translateY(-.6rem);
 		margin-left: 3rem;
+		overflow: hidden;
 	}
 	&-track {
 		display: block;

@@ -1,5 +1,11 @@
 .profile {
 	padding: 10rem 10rem;
+	@include respond(phone) {
+		padding: 5rem 5rem;
+	}
+	@include respond(phone-small) {
+		padding: 5rem 0;
+	}
 	&__container {
 		text-align: center;
 		width: 100%;
@@ -16,6 +22,9 @@
 	&__info {
 		width: 70%;
 		margin: 1rem auto;
+		@include respond(phone) {
+			width: 100%;
+		}
 		&-container {
 			display: inline-block;
 			margin: 0 2rem;

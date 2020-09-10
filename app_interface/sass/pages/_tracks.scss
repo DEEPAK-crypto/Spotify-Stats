@@ -3,13 +3,24 @@
 	margin: 0 auto;
 	padding-top: 10rem;
 	width: 80%;
+	@include respond(phone) {
+		padding-top: 5rem;
+		width: 90%;
+	}
 }
 .top-nav {
 	color: $color-white;
 	margin-bottom: 4rem;
+	@include respond(phone) {
+		margin-bottom: 8rem;
+	}
 	&__heading {
 		font-size: 2.3rem;
 		display: inline-block;
+		@include respond(phone) {
+			display: block;
+			text-align: center;
+		}
 	}
 	&__link {
 		float: right;
@@ -20,9 +31,19 @@
 		color: rgb(71, 71, 71);
 		transition: all .3s;
 		cursor: pointer;
+		&-container {
+			display: inline-block;
+			float: right;
+			padding-right: 2rem;
 
+			@include respond(phone) {
+				width: 80vw;
+				display: grid;
+				grid-template-columns: auto auto auto;
+			}
+		}
 		&:not(:last-child) {
-			margin-left: 2rem;
+			margin-right: 2rem;
 		}
 		&:hover {
 			color: $color-white;
@@ -33,4 +54,3 @@
 		}
 	}
 }
-

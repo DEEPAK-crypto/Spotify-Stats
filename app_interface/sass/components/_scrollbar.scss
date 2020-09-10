@@ -1,19 +1,28 @@
 ::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888; 
-    border-radius:200px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
+	width: 10px;
+	@include respond (phone) {
+		display: none;
+	}
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	@include respond (phone) {
+		display: none;
+	}
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888;
+	border-radius: 200px;
+	@include respond (phone) {
+		display: none;
+	}
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}

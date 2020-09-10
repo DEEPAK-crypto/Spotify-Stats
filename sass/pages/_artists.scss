@@ -3,16 +3,27 @@
 	color: $color-white;
 	&__container {
 		display: grid;
-		grid-template-columns: auto auto auto auto;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
 		grid-row-gap: 3rem;
 		grid-column-gap: 2rem;
 		overflow-x: hidden;
+
+		@include respond(tab-land) {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+		@include respond(phone-small) {
+			grid-template-columns: 1fr 1fr;
+		}
 	}
 
 	&__img {
+		border-radius: 50%;
 		width: 20rem;
 		height: 20rem;
-		border-radius: 50%;
+		@include respond(phone) {
+			width: 15rem;
+			height: 15rem;
+		}
 		&.playlist {
 			border-radius: 2px;
 		}
@@ -24,6 +35,11 @@
 		display: block;
 		font-size: 1.6rem;
 		letter-spacing: .1rem;
+		&.playlist {
+			line-height: 1.6rem;
+			margin-top: 1rem;
+			margin-bottom: 2rem;
+		}
 	}
 }
 .trackTotal {

@@ -135,9 +135,11 @@
             <div class="tracks-full content__div">
                 <div class="top-nav">
                     <h2 class="top-nav__heading"> Top Tracks</h2>
-                    <div class="top-nav__link t " id="shortTerm">Last 4 months </div>
-                    <div class="top-nav__link t" id="mediumTerm">Last 6 months </div>
-                    <div class="top-nav__link t active" id="longTerm">All Time </div>
+                    <div class="top-nav__link-container">
+                        <div class="top-nav__link t " id="shortTerm">Last 4 months </div>
+                        <div class="top-nav__link t" id="mediumTerm">Last 6 months </div>
+                        <div class="top-nav__link t active" id="longTerm">All Time </div>
+                    </div>
                 </div>
                 <div class="track__container t" id="longTermDivT">
                     <% trackLong.items.forEach(function(track) { %>
@@ -183,9 +185,11 @@
             <div class="tracks-full content__div">
                 <div class="top-nav">
                     <h2 class="top-nav__heading"> Top Artists</h2>
-                    <div class="top-nav__link a" id="shortTerm">Last 4 months </div>
-                    <div class="top-nav__link a" id="mediumTerm">Last 6 months </div>
-                    <div class="top-nav__link a active" id="longTerm">All Time </div>
+                    <div class="top-nav__link-container">
+                        <div class="top-nav__link a" id="shortTerm">Last 4 months </div>
+                        <div class="top-nav__link a" id="mediumTerm">Last 6 months </div>
+                        <div class="top-nav__link a active" id="longTerm">All Time </div>
+                    </div>
                 </div>
                 <div class="artist__container a" id="longTermDivA">
                     <% artistLong.items.forEach(function(artist) { %>
@@ -256,7 +260,7 @@
                     <% playlists.items.forEach(function(playlist) { %>
                     <div class="artist">
                         <img src="<%= playlist.images[0].url %> " alt="" class="artist__img playlist">
-                        <span class="artist__name">
+                        <span class="artist__name playlist">
                             <%=playlist.name %>
                         </span>
                         <span class="trackTotal"><%= playlist.tracks.total %> TRACKS</span>
