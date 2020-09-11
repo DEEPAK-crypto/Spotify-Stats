@@ -259,6 +259,7 @@
                     <h2 class="top-nav__heading"> Your Playlists</h2>
 
                 </div>
+                <% if (playlists.items.length!=0) { %>
                 <div class="artist__container">
 
                     <% playlists.items.forEach(function(playlist) { %>
@@ -266,8 +267,8 @@
 
 
                         <img src="<% if (playlist.images.length >0) { %>
-                            <%= playlist.images[0].url %> 
-                        <% } %> " alt="" class="artist__img playlist">
+                <%= playlist.images[0].url %> 
+            <% } %> " alt="" class="artist__img playlist">
                         <span class="artist__name playlist">
                             <%=playlist.name %>
                         </span>
@@ -277,6 +278,10 @@
 
 
                 </div>
+
+                <% } %>
+
+
             </div>
 
         </main>
