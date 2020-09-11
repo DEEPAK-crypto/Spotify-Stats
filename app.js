@@ -35,6 +35,8 @@ app.get('/login', function(req, res) {
 });
 
 app.get('/logedIn', function(req, res) {
+	currentUser = {};
+	authInfo = {};
 	var authOptions = {
 		method: 'post',
 		url: 'https://accounts.spotify.com/api/token',
