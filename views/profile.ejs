@@ -64,7 +64,11 @@
         <main class="content" id="profileSec">
             <section class="profile">
                 <div class="profile__container">
-                    <img src="<%= user.images[0].url %> " alt="" class="profile__image">
+                    <img src=" <% if (user.images.length >0) { %>
+                        <%= user.images[0].url %> 
+                    <% } else{%>
+                        https://www.kindpng.com/picc/m/130-1300217_user-icon-member-icon-png-transparent-png.png
+                        <% } %>  " alt="" class="profile__image">
                     <h1 class="profile__name"><%= user.display_name %> </h1>
 
                     <div class="profile__info">
@@ -153,7 +157,7 @@
                     </div>
                     <% }) %>
                 </div>
-                <div class="track__container t" id="mediumTermDivT">
+                <div class="track__container t" id="mediumTermDivT" style="display: none;">
                     <% trackMedium.items.forEach(function(track) { %>
                     <div class="track__li">
                         <img src="<%= track.album.images[2].url %>" alt="" class="track__image-track">
@@ -165,7 +169,7 @@
                     </div>
                     <% }) %>
                 </div>
-                <div class="track__container t" id="shortTermDivT">
+                <div class="track__container t" id="shortTermDivT" style="display: none;">
                     <% trackShort.items.forEach(function(track) { %>
                     <div class="track__li">
                         <img src="<%= track.album.images[2].url %>" alt="" class="track__image-track">
@@ -201,7 +205,7 @@
                     </div>
                     <% }) %>
                 </div>
-                <div class="artist__container a" id="mediumTermDivA">
+                <div class="artist__container a" id="mediumTermDivA" style="display: none;">
                     <% artistMedium.items.forEach(function(artist) { %>
                     <div class="artist">
                         <img src="<%= artist.images[0].url %> " alt="" class="artist__img">
@@ -211,7 +215,7 @@
                     </div>
                     <% }) %>
                 </div>
-                <div class="artist__container a" id="shortTermDivA">
+                <div class="artist__container a" id="shortTermDivA" style="display: none;">
                     <% artistShort.items.forEach(function(artist) { %>
                     <div class="artist">
                         <img src="<%= artist.images[0].url %> " alt="" class="artist__img">
@@ -259,13 +263,16 @@
 
                     <% playlists.items.forEach(function(playlist) { %>
                     <div class="artist">
-                        <img src="<%= playlist.images[0].url %> " alt="" class="artist__img playlist">
+
+
+                        <img src="<% if (playlist.images.length >0) { %>
+                            <%= playlist.images[0].url %> 
+                        <% } %> " alt="" class="artist__img playlist">
                         <span class="artist__name playlist">
                             <%=playlist.name %>
                         </span>
                         <span class="trackTotal"><%= playlist.tracks.total %> TRACKS</span>
                     </div>
-
                     <% }) %>
 
 

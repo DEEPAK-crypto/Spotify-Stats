@@ -51,6 +51,8 @@ app.get('/logedIn', function(req, res) {
 		json: true
 	};
 	request.post(authOptions, function(error, response, body) {
+		currentUser = {};
+		authInfo = {};
 		if (!error && response.statusCode === 200) {
 			(authInfo.access_token = body.access_token), (authInforefresh_token = body.refresh_token);
 
@@ -204,6 +206,8 @@ app.get('/profile', function(req, res) {
 			playlists: currentUser.playlist,
 			following: currentUser.following
 		});
+		currentUser = {};
+		authInfo = {};
 	}
 });
 const PORT = process.env.PORT || 3000;
