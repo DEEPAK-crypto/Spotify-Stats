@@ -319,10 +319,10 @@ body {
 
 .top-nav {
   color: #fff;
-  margin-bottom: 4rem; }
+  margin-bottom: 5rem; }
   @media (max-width: 48em) {
     .top-nav {
-      margin-bottom: 8rem; } }
+      margin-bottom: 4rem; } }
   .top-nav__heading {
     font-size: 2.3rem;
     display: inline-block; }
@@ -345,11 +345,17 @@ body {
       padding-right: 2rem; }
       @media (max-width: 48em) {
         .top-nav__link-container {
+          padding-right: 0;
+          margin: 0 auto;
+          float: none;
           width: 80vw;
           display: grid;
           grid-template-columns: auto auto auto; } }
     .top-nav__link:not(:last-child) {
       margin-left: 2rem; }
+    @media (max-width: 48em) {
+      .top-nav__link {
+        margin-left: 0; } }
     .top-nav__link:hover {
       color: #fff; }
     .top-nav__link.active {
