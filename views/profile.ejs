@@ -13,24 +13,9 @@
 </head>
 
 <body>
-    <!-- <section id="nav">
-        <div class="nav">
-            <div class="nav__container">
-                <div class="nav__header">
-                    <div class="nav__header__container">
-                        <i class="fab fa-spotify nav__header--icon"></i> <span class="nav__header--title">Spotify</span>
-                    </div>
+   
+    
 
-                </div>
-                <input type="text" class="nav--searchbar" placeholder="search">
-                <div class="nav__list">
-                    <div class="nav__list__container"><a href=""><i class="fas fa-user"></i> Top Artist</a></div>
-                    <div class="nav__list__container"><a href=""><i class="fas fa-music"></i> Top Tracks</a></div>
-
-                </div>
-            </div>
-        </div>
-    </section> -->
     <div class="container">
         <nav class="sidebar">
             <img src="https://cdn.iconscout.com/icon/free/png-256/spotify-11-432546.png" alt="" class="sidebar__logo">
@@ -62,6 +47,19 @@
 
 
         <main class="content" id="profileSec">
+            <div class="mode-button">
+                <span>Display Mode</span>
+                <input type="checkbox" class="mode-button-btn" id="mode">
+                <label for="mode" class="mode-button-label"> 
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                   
+                     <div class="ball"></div>
+                </label>
+               
+             
+            </div>
+        
             <section class="profile">
                 <div class="profile__container">
                     <img src=" <% if (user.images.length >0) { %>

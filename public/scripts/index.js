@@ -74,3 +74,8 @@ function trackChange(element) {
 	document.querySelector(`#${element.id}DivT`).style.display = 'block';
 	element.classList.add('active');
 }
+
+document.querySelector('.mode-button-label').addEventListener('click', function(){
+	document.documentElement.classList.toggle('dark-mode')
+})
+	

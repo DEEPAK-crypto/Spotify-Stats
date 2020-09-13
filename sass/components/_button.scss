@@ -43,3 +43,63 @@
 		font-size: 1.2rem;
 	}
 }
+
+
+.mode-button{
+	position: absolute;
+	right: 10rem;
+	top: 5rem;
+	@include respond(phone){
+		right: 1.5rem;
+	top:1rem;
+	}
+	span{
+		display: block;
+		font-size: 1.4rem;
+		color: white;
+		transform: translateY(10px);
+	}
+	&-btn{
+		opacity: 0;
+
+	}
+	
+	&-btn:checked + &-label .ball {
+		transform: translateX(2.4rem);
+	}
+
+	&-label{
+		margin: 0 auto;
+		background-color: white;
+		border-radius: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: .5rem;
+		width: 5rem;
+		position: relative;
+		height: 2.6rem;
+
+		.ball {
+			background-color: black;
+			border-radius: 50%;
+			position: absolute;
+			top: 2px;
+			left: 2px;
+			height: 2.2rem;
+			width: 2.2rem;
+			transform: translateX(0px);
+			transition: transform 0.2s linear;
+		}
+	}
+
+	.fa-moon{
+		color:#FF9800;
+		font-size: 1.4rem;
+	}
+	.fa-sun{
+		color: #f37712;
+		font-size: 1.4rem;
+	}
+	
+}
