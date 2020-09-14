@@ -12,10 +12,11 @@ Built with:
 
 Features:
 
-- User Authentication
-- Profile Data
-- Recently Played Tracks
-- Top tracks and artists of user
-- Playlists
+- Dark/Light Mode 🌗
+- User Authentication 🔐
+- Profile Data 😄
+- Recently Played Tracks 🎶
+- Top tracks and artists of user 🎸
+- Playlists 🎧
 
 ## [Live Demo](https://spotify-statss.herokuapp.com/)
