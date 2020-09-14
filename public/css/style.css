@@ -303,6 +303,9 @@ body {
 .track__container {
   padding-bottom: 10rem; }
 
+.track__container.main-track {
+  padding-bottom: 0; }
+
 .track__li {
   margin-bottom: 2rem;
   color: #fff; }
@@ -390,8 +393,7 @@ body {
 
 @media (max-width: 48em) {
   .main-track {
-    margin-top: 4rem;
-    padding-bottom: 10rem; } }
+    margin-top: 4rem; } }
 
 .artist {
   text-align: center;
