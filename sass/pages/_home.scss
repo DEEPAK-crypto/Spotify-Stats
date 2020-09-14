@@ -54,6 +54,7 @@
 	color: white;
 	margin: 0 auto;
 	grid-column-gap: 10rem;
+	padding-bottom: 10rem;
 	@include respond(tab-port) {
 		grid-column-gap: 5rem;
 	}
@@ -72,6 +73,9 @@
 			float: right;
 		}
 	}
+}
+.track__container{
+	padding-bottom: 10rem;
 }
 .track__li {
 	margin-bottom: 2rem;

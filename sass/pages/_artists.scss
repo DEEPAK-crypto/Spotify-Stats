@@ -7,7 +7,9 @@
 		grid-row-gap: 3rem;
 		grid-column-gap: 2rem;
 		overflow-x: hidden;
-
+		
+			padding-bottom: 10rem;
+		
 		@include respond(tab-land) {
 			grid-template-columns: 1fr 1fr 1fr;
 		}
