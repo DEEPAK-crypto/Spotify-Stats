@@ -1,4 +1,5 @@
 .profile {
+	position: relative;
 	padding: 10rem 10rem;
 	@include respond(phone) {
 		padding: 5rem 5rem;

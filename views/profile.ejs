@@ -50,20 +50,21 @@
 
 
         <main class="content" id="profileSec">
-            <div class="mode-button">
-                <span>Display Mode</span>
-                <input type="checkbox" class="mode-button-btn" id="mode">
-                <label for="mode" class="mode-button-label"> 
-                    <i class="fas fa-sun"></i>
-                    <i class="fas fa-moon"></i>
-                   
-                     <div class="ball"></div>
-                </label>
-               
-             
-            </div>
+            
         
             <section class="profile">
+                <div class="mode-button">
+                    <span>Display Mode</span>
+                    <input type="checkbox" class="mode-button-btn" id="mode">
+                    <label for="mode" class="mode-button-label"> 
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                       
+                         <div class="ball"></div>
+                    </label>
+                   
+                 
+                </div>
                 <div class="profile__container">
                     <img src=" <% if (user.images.length >0) { %>
                         <%= user.images[0].url %> 

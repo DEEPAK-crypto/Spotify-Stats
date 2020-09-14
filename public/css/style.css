@@ -239,6 +239,7 @@ body {
   flex: 1; }
 
 .profile {
+  position: relative;
   padding: 10rem 10rem; }
   @media (max-width: 48em) {
     .profile {
