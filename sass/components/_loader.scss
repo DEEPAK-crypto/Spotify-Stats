@@ -1,0 +1,25 @@
+.loader{
+    width: 12rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    &__container{
+        height: 100vh;
+        z-index: 9999;
+        position: absolute;
+        width: 100vw;
+        background-color: #181818;
+
+        &.hidden {
+            animation: fadeOut .7s;
+            animation-fill-mode: forwards;
+        }
+    }
+
+
+   
+    
+    
+}

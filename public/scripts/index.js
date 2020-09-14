@@ -1,3 +1,10 @@
+window.addEventListener("load", function () {
+    const loader = document.querySelector(".loader__container");
+    loader.className += " hidden"; // class "loader hidden"
+});
+
+
+
 var navs = document.querySelectorAll('.sidebar__link-container');
 var sections = document.querySelectorAll('.content');
 var artists = document.querySelectorAll('.top-nav__link.a');
